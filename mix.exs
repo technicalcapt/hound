@@ -4,7 +4,8 @@ defmodule Hound.Mixfile do
   @version "1.0.4"
 
   def project do
-    [ app: :hound,
+    [
+      app: :hound,
       version: @version,
       elixir: ">= 1.0.4",
       description: "Webdriver library for integration testing and browser automation",
@@ -15,25 +16,22 @@ defmodule Hound.Mixfile do
     ]
   end
 
-
   def application do
     [
       extra_applications: [:logger],
       mod: {Hound, []},
-      description: 'Integration testing and browser automation library',
+      description: 'Integration testing and browser automation library'
     ]
   end
-
 
   defp deps do
     [
-      {:hackney, "~> 1.5"},
-      {:jason,  "~> 1.1"},
+      {:hackney, "~> 1.15"},
+      {:jason, "~> 1.1"},
       {:earmark, "~> 1.2", only: :docs},
-      {:ex_doc,  "~> 0.16", only: :docs}
+      {:ex_doc, "~> 0.16", only: :docs}
     ]
   end
-
 
   defp package do
     [
@@ -45,5 +43,4 @@ defmodule Hound.Mixfile do
       }
     ]
   end
-
 end
